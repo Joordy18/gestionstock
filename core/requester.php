@@ -34,11 +34,11 @@ class Requester
         return "SELECT * FROM zone WHERE id = :id";
     }
     public function insertZone($data) {
-        return "INSERT INTO zone (libelle, adresse) VALUES (:libelle, :adresse)";
+        return "INSERT INTO zone (libelle, rue, codePostal, ville) VALUES (:libelle, :rue, :codePostal, :ville)";
     }
 
     public function updateZone($id, $data) {
-        return "UPDATE zone SET libelle = :libelle, adresse = :adresse WHERE id = :id";
+        return "UPDATE zone SET libelle = :libelle, rue = :rue, codePostal = :codePostal, ville= :ville WHERE id = :id";
     }
 
     public function deleteZone($id) {

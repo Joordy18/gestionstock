@@ -15,7 +15,9 @@ class zoneController extends Controller {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = [
                 'libelle' => $_POST['libelle'],
-                'adresse' => $_POST['adresse']
+                'rue' => $_POST['rue'],
+                'codePostal' => $_POST['codepostal'],
+                'ville' => $_POST['ville']
             ];
             $requester = new Requester();
             $query = $requester->insertZone($data);
@@ -31,7 +33,9 @@ class zoneController extends Controller {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = [
                 'libelle' => $_POST['libelle'],
-                'adresse' => $_POST['adresse'],
+                'rue' => $_POST['rue'],
+                'codePostal' => $_POST['codepostal'],
+                'ville' => $_POST['ville'],
                 'id' => $id
             ];
             $requester = new Requester();

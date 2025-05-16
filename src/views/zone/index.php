@@ -7,22 +7,31 @@
         <tr>
 <!--            <th>id</th>-->
             <th>nom</th>
-            <th>adresse</th>
+            <th>rue</th>
+            <th>code Postal</th>
+            <th>ville</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($data as $zone): ?>
             <tr>
-<!--                <td>--><?php //= $zone['id'] ?><!--</td>-->
+<!--                w-->
                 <td><?= $zone['libelle'] ?></td>
-                <td><?= $zone['adresse'] ?></td>
+                <td><?= $zone['rue'] ?></td>
+                <td><?= $zone['codePostal'] ?></td>
+                <td><?= $zone['ville'] ?></td>
                 <td>
-                    <a href="<?= URL ?>view/<?= $zone['id'] ?>">Détails</a>
+<!--                    <a href="--><?php //= URL ?><!--view/--><?php //= $zone['id'] ?><!--">Détails</a>-->
+                    <form id="supprform" action="<?= URL ?>view/<?= $zone['id'] ?>" method="get" style="display:inline;">
+                        <button type="submit">Détails</button>
+                    </form>
+                    <form id =supprform" action="<?= URL ?>update/<?= $zone['id'] ?>" method="get" style="display:inline;">
+                        <button type="submit">Modifier</button>
                     <form id="supprform" method="post" action="<?= URL ?>delete/<?= $zone['id'] ?>" style="display:inline;">
                         <button type="submit" name="delete">Supprimer</button>
                     </form>
-                    <a href="<?= URL ?>update/<?= $zone['id'] ?>">Modifier</a>
+<!--                    <a href="--><?php //= URL ?><!--update/--><?php //= $zone['id'] ?><!--">Modifier</a>-->
                 </td>
             </tr>
         <?php endforeach; ?>

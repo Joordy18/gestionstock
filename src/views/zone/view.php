@@ -15,7 +15,7 @@
                 </tr>
                 <tr>
                     <th>Adresse</th>
-                    <td><?= $zone['adresse'] ?></td>
+                    <td><?= $zone['rue']." ".$zone['codePostal']." ".$zone['ville']?></td>
                 </tr>
 
             </table>

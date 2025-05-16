@@ -1,7 +1,9 @@
 <?php const URL = "http://gestionstock/product/"; ?>
     <h2>Liste des produits</h2>
-<?php if (!empty($data)): ?>
+<div class="test">
     <button onclick="window.location.href='<?= URL ?>insert/'">Ajouter un produit</button>
+</div>
+<?php if (!empty($data)): ?>
     <table>
         <thead>
         <tr>
@@ -28,11 +30,17 @@
                 <td><?= $product['zoneStockage'] ?></td>
                 <td><img src="<?= $product['image'] ?>" alt="<?= $product['nom'] ?>" style="width: 100px; height: auto;"></td>
                 <td>
-                    <a href="<?= URL ?>view/<?= $product['id'] ?>">Détails</a>
+<!--                    <a href="--><?php //= URL ?><!--view/--><?php //= $product['id'] ?><!--">Détails</a>-->
+                    <form id="supprform" action="<?= URL ?>view/<?= $product['id'] ?>" method="get" style="display:inline;">
+                        <button type="submit">Détails</button>
+                    </form>
+                    <form id =supprform" action="<?= URL ?>update/<?= $product['id'] ?>" method="get" style="display:inline;">
+                        <button type="submit">Modifier</button>
+                    </form>
                     <form id="supprform" method="post" action="<?= URL ?>delete/<?= $product['id'] ?>" style="display:inline;">
                         <button type="submit" name="delete">Supprimer</button>
                     </form>
-                    <a href="<?= URL ?>update/<?= $product['id'] ?>">Modifier</a>
+<!--                    <a href="--><?php //= URL ?><!--update/--><?php //= $product['id'] ?><!--">Modifier</a>-->
                 </td>
             </tr>
         <?php endforeach; ?>

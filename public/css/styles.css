@@ -176,3 +176,8 @@ button.secondary:hover, a.secondary:hover {
 .details-table td {
     width: 50%;
 }
+
+.test button {
+    margin: 0 auto;
+    display: block;
+}
